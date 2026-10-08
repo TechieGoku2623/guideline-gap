@@ -15,10 +15,10 @@
 ## Watch
 
 <p align="center">
-  <img src="docs/demo.gif" alt="guideline-gap" width="880"/>
+  <img src="docs/demo.gif" alt="guideline-gap: two concordant charts, one unreadable chart, gap rate 0.0" width="880"/>
 </p>
 
-The clip is `python -m guideline_gap`, the program in this repository. [Full video](docs/demo.mp4).
+The clip is the working screen: two concordant charts, one unreadable chart, and a gap rate of 0.0. [Open the demo](docs/demo.html). [Full video](docs/demo.mp4).
 
 ## The problem
 

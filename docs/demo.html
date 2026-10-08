@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<title>guideline-gap</title>
+<style>
+  * { box-sizing: border-box; }
+  html, body { margin: 0; height: 100%; background: #0c161a; color: #e6f8f4; font-family: Inter, system-ui, sans-serif; }
+  body { padding: 28px 36px; display: flex; flex-direction: column; }
+  header { display: flex; justify-content: space-between; align-items: end; margin-bottom: 18px; }
+  h1 { margin: 0; font-size: 32px; letter-spacing: -0.04em; }
+  header p { margin: 0; color: #8ecfc4; }
+  .grid { flex: 1; display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+  article { background: #122226; border: 1px solid #245850; border-radius: 18px; padding: 18px; display: flex; flex-direction: column; }
+  .rec { color: #8ecfc4; font-size: 14px; letter-spacing: 0.04em; text-transform: uppercase; }
+  .chart { flex: 1; margin: 16px 0; padding: 16px; border-radius: 12px; background: #0c161a; font-size: 20px; line-height: 1.45; }
+  mark { background: #1d6b58; color: #e6f8f4; padding: 0 4px; border-radius: 4px; }
+  .label { font-size: 18px; font-weight: 650; opacity: 0; transition: 0.4s ease; }
+  .label.show { opacity: 1; }
+  .ok { color: #5ee0c2; }
+  .gap { color: #ffb089; }
+  .abs { color: #d6d3a4; }
+  footer { margin-top: 16px; font-size: 18px; color: #8ecfc4; }
+</style>
+</head>
+<body>
+<header>
+  <h1>guideline-gap</h1>
+  <p>Order HbA1c before intensifying therapy.</p>
+</header>
+<section class="grid">
+  <article>
+    <div class="rec">Chart A</div>
+    <div class="chart"><mark>HbA1c</mark> 7.4% was drawn two days ago.</div>
+    <div class="label ok" id="l1">concordant · span HbA1c</div>
+  </article>
+  <article>
+    <div class="rec">Chart B</div>
+    <div class="chart">Seen in clinic. Counseled. No lab named.</div>
+    <div class="label abs" id="l2">unreadable · abstain</div>
+  </article>
+  <article>
+    <div class="rec">Chart C</div>
+    <div class="chart">Patient <mark>declined</mark> the lab draw after counseling.</div>
+    <div class="label ok" id="l3">concordant · documented refusal</div>
+  </article>
+</section>
+<footer id="foot"></footer>
+<script>
+const wait = (ms) => new Promise((r) => setTimeout(r, ms));
+async function play() {
+  await wait(800);
+  document.getElementById("l1").classList.add("show");
+  await wait(800);
+  document.getElementById("l2").classList.add("show");
+  await wait(800);
+  document.getElementById("l3").classList.add("show");
+  await wait(400);
+  document.getElementById("foot").textContent = "concordant 2 · unreadable 1 · gap 0 · gap rate, abstentions excluded: 0.0";
+}
+</script>
+</body>
+</html>
