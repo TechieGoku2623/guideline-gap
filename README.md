@@ -6,7 +6,7 @@
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
-**Status:** problem brief. The question and the measurement are written here. An implementation is not in this repository yet.
+**Status:** runnable on designed examples. Not a clinical system, a LIMS, or a trained model.
 
 </div>
 
@@ -18,7 +18,7 @@
   <img src="docs/demo.gif" alt="guideline-gap" width="880"/>
 </p>
 
-The clip plays on this page. [Full video](docs/demo.mp4).
+The clip is `python -m guideline_gap`, the program in this repository. [Full video](docs/demo.mp4).
 
 ## The problem
 
@@ -40,7 +40,17 @@ Every label points at the recommendation sentence and the chart span that justif
 
 ## What this repository is
 
-That labeling rule, stated before any extractor is trusted with it. The nearest running system in this portfolio is [Sentinel-RAG](https://github.com/TechieGoku2623/Sentinal_RAG), which answers from a protocol and flags a draft it cannot ground. This repository is not a medical device and not an audit of a real health system.
+`guideline-gap` applies the three labels when the chart contains the action, a documented refusal, neither, or almost nothing. Unreadable rows stay out of the gap rate. It is not a medical device and not an audit of a real health system.
+
+## Run
+
+```bash
+python3 -m venv .venv
+source .venv/bin/activate
+pip install -e .
+python -m guideline_gap
+python -m unittest discover -s tests -v
+```
 
 ## Author
 
