@@ -12,6 +12,14 @@
 
 ---
 
+## Watch
+
+<p align="center">
+  <img src="docs/demo.gif" alt="guideline-gap" width="880"/>
+</p>
+
+The clip plays on this page. [Full video](docs/demo.mp4).
+
 ## The problem
 
 A guideline can be clear and the practice can still diverge: the recommended first test was not ordered, a contraindicated drug appears anyway, or the note cites a recommendation the chart does not follow. Calling every divergence a care failure is how this measurement gets dishonest. Some gaps are documentation. Some are a justified exception. Some are the gap the guideline was written to close.
